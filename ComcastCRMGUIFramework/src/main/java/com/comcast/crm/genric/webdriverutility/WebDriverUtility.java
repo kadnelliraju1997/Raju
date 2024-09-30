@@ -37,8 +37,8 @@ public class WebDriverUtility {
 		File src = ts.getScreenshotAs(OutputType.FILE);
 		File dst = new File("./ScreenShots/" + screenShotName + "+" + jlib.date() + ".png");
 		String path = ts.getScreenshotAs(OutputType.BASE64);
-			FileHandler.copy(src, dst);
-		
+		FileHandler.copy(src, dst);
+
 		return path;
 	}
 
