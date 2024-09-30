@@ -10,12 +10,9 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
-
 import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
 import com.comcast.crm.genric.webdriverutility.JavaUtility;
-import com.comcast.crm.genric.webdriverutility.UtilityClassObject;
 import com.comcast.crm.genric.webdriverutility.WebDriverUtility;
 import com.comcast.crm.objectrepository.homepage.HomePage;
 import com.comcast.crm.objectrepository.loginpage.LoginPage;
@@ -39,7 +36,7 @@ public class BaseClass {
 		System.out.println("<==connect to DB, Report Config==>");
 	}
 
-	@Parameters("BROWSER")
+	
 	@BeforeClass(groups = { "smoke", "regression" })
 	public void launchBrowser() throws Throwable {
 		System.out.println("Launch The Browser ");
