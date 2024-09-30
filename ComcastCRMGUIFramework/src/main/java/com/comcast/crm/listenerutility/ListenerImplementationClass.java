@@ -4,15 +4,16 @@ import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.comcast.crm.basetest.BaseClass1;
+import com.comcast.crm.basetest.BaseClass;
 import com.comcast.crm.genric.webdriverutility.UtilityClassObject;
 
-public class ListenerImplementationClass extends BaseClass1 implements ITestListener, ISuiteListener  {
+public class ListenerImplementationClass extends BaseClass implements ITestListener, ISuiteListener  {
 	
 	
 	
