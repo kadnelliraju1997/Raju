@@ -12,12 +12,12 @@ public class JavaUtility {
 		int ranInt = random.nextInt(1000);
 		return ranInt;
 	}
-	
+
 	public String date() {
-		Date d=new Date();
+		Date d = new Date();
 		String system_date = d.toString().replace(" ", "").replace(":", "_");
 		return system_date;
-		
+
 	}
 
 	public String getSystemDateYYYYMMDD() {

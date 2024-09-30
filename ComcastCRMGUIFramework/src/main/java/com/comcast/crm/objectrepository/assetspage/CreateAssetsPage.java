@@ -8,11 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 public class CreateAssetsPage {
 	@FindBy(xpath = "//img[@src='themes/softed/images/btnL3Add.gif']")
 	private WebElement createAssetsImg;
-	
-	public CreateAssetsPage(WebDriver driver)
-	{
+
+	public CreateAssetsPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
+
 	public WebElement getCreateAssetsImg() {
 		return createAssetsImg;
 	}
