@@ -9,11 +9,11 @@ public class CreateCapaignsPage {
 
 	@FindBy(xpath = "//img[@src='themes/softed/images/btnL3Add.gif']")
 	private WebElement createCampaignsImg;
-	
+
 	public CreateCapaignsPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public WebElement getCreateCampaignsImg() {
 		return createCampaignsImg;
 	}
