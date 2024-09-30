@@ -29,11 +29,7 @@ public class HomePage {
 	@FindBy(name = "Invoice")
 	private WebElement invoiceLink;
 
-	public WebElement getAssetsLink() {
-		return assetsLink;
-	}
-
-	@FindBy(xpath = "//a[text()='Opportunities']") // a[@name='Sales Order']
+	@FindBy(xpath = "//a[text()='Opportunities']")
 	private WebElement opportunitiesLink;
 
 	@FindBy(linkText = "Products")
@@ -60,6 +56,11 @@ public class HomePage {
 	public WebElement getPriceBooksLink() {
 		return priceBooksLink;
 	}
+
+	public WebElement getAssetsLink() {
+		return assetsLink;
+	}
+
 	public WebElement getInvoiceLink() {
 		return invoiceLink;
 	}
