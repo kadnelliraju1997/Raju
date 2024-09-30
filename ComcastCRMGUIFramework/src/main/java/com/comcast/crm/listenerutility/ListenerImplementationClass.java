@@ -13,26 +13,23 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.comcast.crm.basetest.BaseClass;
 import com.comcast.crm.genric.webdriverutility.UtilityClassObject;
 
-public class ListenerImplementationClass extends BaseClass implements ITestListener, ISuiteListener  {
-	
-	
-	
-	public ExtentReports report;
-	
-	public static ExtentTest test;
+public class ListenerImplementationClass extends BaseClass implements ITestListener, ISuiteListener {
 
+	public ExtentReports report;
+
+	public static ExtentTest test;
 
 	public void onStart(ISuite suite) {
 		System.out.println("Repor configuration");
-		
+
 		// spark report config
-		ExtentSparkReporter spark=new ExtentSparkReporter("./AdvanceReport/report_"+jlib.date()+".html");
+		ExtentSparkReporter spark = new ExtentSparkReporter("./AdvanceReport/report_" + jlib.date() + ".html");
 		spark.config().setDocumentTitle("CRM Test Suite");
 		spark.config().setReportName("Results");
 		spark.config().setTheme(Theme.DARK);
-		
-		//Add env information and create Test
-		report=new ExtentReports();
+
+		// Add env information and create Test
+		report = new ExtentReports();
 		report.attachReporter(spark);
 		report.setSystemInfo("OS", "Window-11");
 		report.setSystemInfo("Browser", "Chrome-128");
@@ -46,16 +43,15 @@ public class ListenerImplementationClass extends BaseClass implements ITestListe
 	public void onTestStart(ITestResult result) {
 		System.out.println("=====>=====>" + result.getMethod().getMethodName() + "=====>START====>");
 		String testName = result.getMethod().getMethodName();
-		test=report.createTest(testName);
+		test = report.createTest(testName);
 		UtilityClassObject.setTest(test);
-		test.log(Status.INFO, result.getMethod().getMethodName()+"===>STARTED<===");
-
+		test.log(Status.INFO, result.getMethod().getMethodName() + "===>STARTED<===");
 
 	}
 
 	public void onTestSuccess(ITestResult result) {
 		System.out.println("=====>=====>" + result.getMethod().getMethodName() + "=====>END====>");
-		test.log(Status.PASS, result.getMethod().getMethodName()+"===>COMPLETED<===");
+		test.log(Status.PASS, result.getMethod().getMethodName() + "===>COMPLETED<===");
 
 	}
 
@@ -74,18 +70,16 @@ public class ListenerImplementationClass extends BaseClass implements ITestListe
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		
+
 		try {
 			String dst = wlib.getScreenShot(session_driver, testName);
-			test.addScreenCaptureFromBase64String(dst,testName);
+			test.addScreenCaptureFromBase64String(dst, testName);
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		test.log(Status.FAIL, result.getMethod().getMethodName()+"===>FAILED<===");
 
+		test.log(Status.FAIL, result.getMethod().getMethodName() + "===>FAILED<===");
 
 	}
 
