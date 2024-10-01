@@ -11,34 +11,16 @@ import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.Test;
 
 public class SampleTestForScreenShot {
-	
-	@Test
-	public void amazonTest() throws IOException {
-		WebDriver driver =new ChromeDriver();
-		driver.get("https://www.amazon.in");
-		//step1: Type cast to Takesscrenshot
-		TakesScreenshot ts=(TakesScreenshot)driver;
-		File src = ts.getScreenshotAs(OutputType.FILE);
-		FileHandler.copy(src, new File("./ScreenShots/amazonTest.png"));
-	
-		
-	}
-	
 
 	@Test
-	public void amazonTest1() throws IOException {
-		WebDriver driver =new ChromeDriver();
+	public void amazonTest() throws IOException {
+		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.in");
-		//step1: Type cast to Takesscrenshot
-		TakesScreenshot ts=(TakesScreenshot)driver;
+		// step1: Type cast to Takesscrenshot
+		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
 		FileHandler.copy(src, new File("./ScreenShots/amazonTest.png"));
-	
-		
-		
-		
+
 	}
-	
-	
 
 }
