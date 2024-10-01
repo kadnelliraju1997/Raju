@@ -35,6 +35,8 @@ public class SampleTestForScreenShot {
 		FileHandler.copy(src, new File("./ScreenShots/amazonTest.png"));
 	
 		
+		
+		
 	}
 	
 	
